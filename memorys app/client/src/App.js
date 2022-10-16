@@ -10,6 +10,7 @@ function App() {
   // const classess = useStyle()
   const dispatch = useDispatch()
   useEffect(() => {
+ 
     dispatch(getPosts())
   }, [dispatch])
   

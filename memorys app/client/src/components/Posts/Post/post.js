@@ -15,10 +15,11 @@ import {
 } from "@mui/material";
 import moment from "moment";
 import { ThumbUpAlt, Delete, MoreHoriz } from "@mui/icons-material";
-function post() {
+function post({post}) {
   return (
     <Card>
       <CardMedia image={post.selectedFile} title={post.title} />
+      {/* <img  src={post.selectedFile} /> */}
       <Box>
         <Typography variant="h6">{post.creator}</Typography>
         <Typography variant="body2">
@@ -30,7 +31,8 @@ function post() {
       </Box>
       <Box>
         <Typography variant="body2" color="textSecondary">
-          {post.tags.map((tags) => `# ${tags} `)}
+          {post.tags.map((tag) => `# ${tag} `)}
+
         </Typography>
       </Box>
       <CardContent>
