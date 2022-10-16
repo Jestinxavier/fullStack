@@ -19,11 +19,15 @@ function Posts() {
     <CircularProgress />
   ) : (
     <Grid container alignItems="stretch" spacing={3}>
-      {posts.map((post) => (
-        <Grid key={post.id} item xs={12} sm={6}>
+      {posts?.map((post) => { return(
+        <Grid key={post._id} item xs={12} sm={6}>
+          {
+            console.log(post,"postisss000")
+          }
           <Post post={post} />
-        </Grid>
-      ))}
+        </Grid>)
+      }
+      )}
     </Grid>
   );
 }
