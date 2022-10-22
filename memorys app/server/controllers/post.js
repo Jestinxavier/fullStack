@@ -20,3 +20,14 @@ res.status(201).json(newPost);
 res.status(409).json({message:error.message});
 }
 };
+
+export const updatepost = async(req, res)=>{
+  const {id:_id} = req.params;
+  const post = req.body
+   
+  if(mongooose.Types.Objectid.isValid(_id)){
+    return res.status(404).send("No post with that id ")
+  }
+   const updatedPost = await PostMessage.findByIdAndUpdate(_id,post,{new:true})
+  res.json(updatedPost)
+}
