@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 
 import { useSelector } from "react-redux";
-function Posts() {
+function Posts({setcurrentId}) {
   const posts = useSelector((state) => state.Posts);
   console.log(posts, "sdsssdss");
   return !posts.length ? (
@@ -24,7 +24,7 @@ function Posts() {
           {
             console.log(post,"postisss000")
           }
-          <Post post={post} />
+          <Post post={post} setcurrentId={setcurrentId}/>
         </Grid>)
       }
       )}
